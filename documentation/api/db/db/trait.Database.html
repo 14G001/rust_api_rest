@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Contiene las operaciones que deberán tener los distintos tipos de bases de datos del aplicativo; logrando así el patrón de diseño Abstract Factory; forzando a que los distintos tipos de bases de datos se implementen correctamente. Las bases de datos contienen los datos de los clientes y sus saldos."><title>Database in api::db::db - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ac92e1bbe349e143.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="api" data-themes="" data-resource-suffix="" data-rustdoc-version="1.76.0 (07dca489a 2024-02-04)" data-channel="1.76.0" data-search-js="search-2b6ce74ff89ae146.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-f2adc0d6ca4d09fb.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../static.files/main-305769736d49e732.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-feafe1bb7466e4bd.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../api/index.html">api</a><span class="version">0.1.0</span></h2></div><h2 class="location"><a href="#">Database</a></h2><div class="sidebar-elems"><section><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.add_client">add_client</a></li><li><a href="#tymethod.get_client">get_client</a></li><li><a href="#tymethod.update_client_balance">update_client_balance</a></li></ul><h3><a href="#object-safety">Object Safety</a></h3><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In api::db::db</a></h2></div></nav><div class="sidebar-resizer"></div>
+    <main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../api/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="../../index.html">api</a>::<wbr><a href="../index.html">db</a>::<wbr><a href="index.html">db</a>::<wbr><a class="trait" href="#">Database</a><button id="copy-path" title="Copy item path to clipboard"><img src="../../../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="src" href="../../../src/api/db/db.rs.html#14-54">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait Database {
+    // Required methods
+    fn <a href="#tymethod.add_client" class="fn">add_client</a>(assigned_id: &amp;mut <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>, client: <a class="struct" href="../../client/client/struct.Client.html" title="struct api::client::client::Client">Client</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.get_client" class="fn">get_client</a>(client: &amp;mut <a class="struct" href="../../client/client/struct.Client.html" title="struct api::client::client::Client">Client</a>, client_id: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a>;
+<span class="item-spacer"></span>    fn <a href="#tymethod.update_client_balance" class="fn">update_client_balance</a>(client_id: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>, new_balance: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.f64.html">f64</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a>;
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Contiene las operaciones que
+deberán tener los distintos tipos
+de bases de datos del aplicativo;
+logrando así el patrón de diseño
+Abstract Factory; forzando a que
+los distintos tipos de bases de
+datos se implementen
+correctamente.
+Las bases de datos contienen
+los datos de los clientes y sus
+saldos.</p>
+</div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="tymethod.add_client" class="method"><a class="src rightside" href="../../../src/api/db/db.rs.html#26">source</a><h4 class="code-header">fn <a href="#tymethod.add_client" class="fn">add_client</a>(assigned_id: &amp;mut <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>, client: <a class="struct" href="../../client/client/struct.Client.html" title="struct api::client::client::Client">Client</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a></h4></section></summary><div class="docblock"><p>Agrega un cliente a la base de datos
+y devuelve el ID que se le asignó al
+mismo.</p>
+<h5 id="argumentos"><a href="#argumentos">Argumentos</a></h5>
+<ul>
+<li><code>assigned_id</code>: ID asignado a devolver.</li>
+<li><code>client</code>: Datos del cliente a agregar.</li>
+</ul>
+<h5 id="devuelve"><a href="#devuelve">Devuelve</a></h5>
+<p>Tipo de error en caso de que haya ocurrido
+alguno al intentar agregar al cliente.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.get_client" class="method"><a class="src rightside" href="../../../src/api/db/db.rs.html#40">source</a><h4 class="code-header">fn <a href="#tymethod.get_client" class="fn">get_client</a>(client: &amp;mut <a class="struct" href="../../client/client/struct.Client.html" title="struct api::client::client::Client">Client</a>, client_id: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a></h4></section></summary><div class="docblock"><p>Devuelve los datos de un cliente
+encontrado en la base de datos a
+partir de su ID.</p>
+<h5 id="argumentos-1"><a href="#argumentos-1">Argumentos</a></h5>
+<ul>
+<li><code>client</code>: Datos del cliente a devolver.</li>
+<li><code>client_id</code>: ID de cliente a bsucar.</li>
+</ul>
+<h5 id="devuelve-1"><a href="#devuelve-1">Devuelve</a></h5>
+<p>Tipo de error en caso de que haya ocurrido
+alguno al intentar obtener los datos del
+cliente.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="tymethod.update_client_balance" class="method"><a class="src rightside" href="../../../src/api/db/db.rs.html#53">source</a><h4 class="code-header">fn <a href="#tymethod.update_client_balance" class="fn">update_client_balance</a>(client_id: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.u8.html">u8</a>, new_balance: <a class="primitive" href="https://doc.rust-lang.org/1.76.0/std/primitive.f64.html">f64</a>) -&gt; <a class="enum" href="../error/enum.DbError.html" title="enum api::db::error::DbError">DbError</a></h4></section></summary><div class="docblock"><p>Actualiza el saldo de un cliente en la
+base de datos.</p>
+<h5 id="argumentos-2"><a href="#argumentos-2">Argumentos</a></h5>
+<ul>
+<li><code>client_id</code>: ID de cliente a bsucar.</li>
+<li><code>new_balance</code>: Saldo nuevo del cliente.</li>
+</ul>
+<h5 id="devuelve-2"><a href="#devuelve-2">Devuelve</a></h5>
+<p>Tipo de error en caso de que haya ocurrido
+alguno al intentar actualizar el saldo del
+cliente.</p>
+</div></details></div><h2 id="object-safety" class="section-header">Object Safety<a href="#object-safety" class="anchor">§</a></h2><div class="object-safety-info">This trait is <b>not</b> <a href="https://doc.rust-lang.org/1.76.0/reference/items/traits.html#object-safety">object safe</a>.</div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../../trait.impl/api/db/db/trait.Database.js" async></script></section></div></main></body></html>

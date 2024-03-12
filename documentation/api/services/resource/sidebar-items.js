@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["client_balance","new_client","new_credit_transaction","new_debit_transaction","store_balances"]};

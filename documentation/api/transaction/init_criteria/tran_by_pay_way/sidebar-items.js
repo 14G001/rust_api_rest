@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["tran_by_pay_way"]};

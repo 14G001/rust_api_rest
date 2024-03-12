@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"api":[["impl&lt;'de&gt; <a class=\"trait\" href=\"https://docs.rs/serde/1.0.197/serde/de/trait.Deserialize.html\" title=\"trait serde::de::Deserialize\">Deserialize</a>&lt;'de&gt; for <a class=\"struct\" href=\"api/utils/parse/naive_date/struct.CustomNaiveDate.html\" title=\"struct api::utils::parse::naive_date::CustomNaiveDate\">CustomNaiveDate</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["tran_by_pay_way"]};
