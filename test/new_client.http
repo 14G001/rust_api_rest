@@ -1,0 +1,9 @@
+POST http://localhost:8080/new_client
+Content-Type: application/json
+Authorization: token xxx
+
+{
+    "document_number" : 22333447,
+    "client_name"     : "5",
+    "country"         : "6"
+}
