@@ -15,3 +15,8 @@ Si el repositorio fué descargado a partir de un comprimido (".zip", ".7z", etc)
 ## Idioma
 
 **El código se encuentra escrito en inglés y la documentación en español.**
+
+## Ramas del repositorio
+
+* [**master**]() : rama principal con los resultados finales del enunciado.
+* **sql_db_version** : rama de tests en la que se implementa una base de datos SQLite reemplazando la base de datos en memoria RAM que se indica en el enunciado.
